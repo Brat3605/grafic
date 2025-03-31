@@ -21,5 +21,16 @@ def draw_graf(width, canvas, height):
     canvas.create_text(width - 10, height / 2 + 10, text = "x", anchor=tk.E)
 
     canvas.create_oval(width / 2 - 3, height / 2 - 3, width / 2 + 3, height / 2 + 3, fill="white") # Точка О
-    
+
+    # Рисуем график функции
+    for x in range(int(x_min * x_scale), int(x_max * x_scale)):
+        x1 = x / x_scale
+        y1 = f(x1)
+        x2 = (x + 1) / x_scale
+        y2 = f(x2)
+        canvas.create_line(
+            (x1 - x_min) * x_scale, height - (y1 - y_min) * y_scale,
+            (x2 - x_min) * x_scale, height - (y2 - y_min) * y_scale,
+            fill="blue"
+        )
 

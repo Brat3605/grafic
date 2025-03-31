@@ -14,5 +14,12 @@ def draw_graf(width, canvas, height):
 
     # Оси
     canvas.create_line(0, height / 2, width, height / 2, fill="black", arrow=tk.LAST)  # Ось x
-    canvas.create_line(width / 2, height, width / 2, 0, fill="black", arrow=tk.LAST)  # Ось y
+    canvas.create_line(width / 2, height, width / 2, 0, fill="black", arrow=tk.LAST) # Ось y
+
+    canvas.create_text(width / 2 + 10, height / 2 - 10, text = "0", ancho=tk.W)
+    canvas.create_text(width / 2 + 10, 10, text = "y", anchor=tk.W)
+    canvas.create_text(width - 10, height / 2 + 10, text = "x", anchor=tk.E)
+
+    canvas.create_oval(width / 2 - 3, height / 2 - 3, width / 2 + 3, height / 2 + 3, fill="white") # Точка О
+    
 
